@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Chat-App </title>
+        <link href=  "css/app.css" rel="stylesheet">
+        <script src= "http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src= "js/bootstrap.min.js"></script>
+        <script src= "js/web3.min.js"></script>
+        <script src= "js/truffle-contract.js"></script>
+        <script src= "js/app.js"></script>
+    </head>
+
+    <body>
+
+        <h1> Aarudh Messenger </h1> <br>
+        <h2>Denetrilized Chat</h2>
+        <hr style="border: 1px solid black; margin-top: -5px;" />
+        <br>
+
+        <label> Contract Address </label> <br>
+        <a target="_blank" type="addressLinks" id="contractAddress" spellcheck="false"> Could Not Load</a>
+        <br><br>
+
+        <label> Contract Owner </label> <br>
+        <a target="_blank" type="addressLinks" id="contractOwner" spellcheck="false"> Could Not Load</a>
+        <br><br>
+
+        <label> My Address </label> <br>
+        <a target="_blank" type="addressLinks" id="myAddress" spellcheck="false"> Could Not Load</a>
+        <br><br>
+
+        <label>Your balance:</label> <br>
+        <textarea type="mySimpleLabel" id="myBalance" spellcheck="false">0 Ether</textarea>
+        <br><br>
+
+        <br>
+        <label>User Directory</label>
+        <input type="myDefaultButton" value="Copy" onclick="App.copyAddressToSend()" style="float: right;"></input>
+        <div style="overflow: hidden; padding-right: 10px">
+            <select type="registeredUsersAddressMenu" id="registeredUsersAddressMenu"></select>
+        </div>
+        
+         <br>
+
+
+        <label>Status</label><br>
+        <span id="status" style="overflow: hidden; word-wrap: break-word; display: inline-block; white-space: pre-wrap; font-size: 12px; color:red;">Welcome To Aarudh Messenger</span>
+
+
+        </body>
+
+        </html>
