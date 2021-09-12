@@ -74,7 +74,27 @@ getContractProperties : function() {
 
 //todo
 displayMyAccountInfo: function() {
-  
+  web3.eth.getAccounts(function(err, account) {
+    if (err === null) {
+      App.account = account;
+      document.getElementById("myAddress").innerHTML = account;
+      web3.eth.getBalance(account[0], function(err, balance) {
+        if (err === null) {
+          if (balance == 0) {
+            alert("Your account has zero balance. You must transfer some Ether to your MetaMask account to be able to send messages with ChatWei. Just come back and refresh this page once you have transferred some funds.");
+            App.setStatus("Please buy more Ether");
+            return;
+          } else {
+            document.getElementById("myBalance").innerHTML = web3.fromWei(balance, "ether").toNumber() + " Ether";
+            return App.checkUserRegistration();
+          }
+        } else {
+          console.log(err);
+        }
+      });
+    }
+  });
+  return null;
 },
 
 setStatus: function(message) {
