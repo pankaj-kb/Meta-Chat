@@ -102,6 +102,13 @@ setStatus: function(message) {
 
 }
 
+//todo
+
+checkUserRegistration: function() {},
+
+//todo
+copyAddressToSend: function() {},
+
 };
 
 $(document).ready(function()
